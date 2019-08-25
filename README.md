@@ -9,11 +9,11 @@ Thus, we are introducing this App that will help renters in the Big Apple to gai
 The App uses modern Machine Learning techniques to predict rental price in NYC based on Streeteasy data. Users will just need to enter some apartment descriptions such as how many bedrooms or what neighborhood and the App will return the fair rental price for the user.
 
 ## How we built it ##
-- 1) An Andriod app which takes user input and predicts rental price 2) Backend model using Python to predict rental price using ML. Dataset: https://github.com/purcelba/streeteasy_scrape
- - Data Analysis Model
+###Data Analysis Model
  - The Data Analytics Model deploys machine learning models to identify key drivers for the moving rental prices in one of the most expensive place in the world - New York City- location, room size, and room type. Based on model results, rental rates are predicted for various property scenarios. …
+![](nyc_pricer.gif)
 
- - Android App
+###Android App
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
