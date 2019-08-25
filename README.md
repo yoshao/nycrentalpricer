@@ -11,7 +11,7 @@ The App uses modern Machine Learning techniques to predict rental price in NYC b
 ## How we built it ##
 ###Data Analysis Model
  - The Data Analytics Model deploys machine learning models to identify key drivers for the moving rental prices in one of the most expensive place in the world - New York City- location, room size, and room type. Based on model results, rental rates are predicted for various property scenarios. …
-![](nyc_pricer2.gif)
+![](nyc_price2.gif)
 
 ###Android App
 
