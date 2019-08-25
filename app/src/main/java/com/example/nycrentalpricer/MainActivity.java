@@ -1,14 +1,16 @@
 package com.example.nycrentalpricer;
 
-import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,15 +18,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        BottomNavigationView navView = findViewById(R.id.nav_view);
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        NavigationUI.setupWithNavController(navView, navController);
-    }
+/**
+        Spinner s = (Spinner) findViewById(R.id.moveInNum);
+        s.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                //Toast.makeText(MainActivity.this, parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                moveIn = Integer.parseInt(parent.getSelectedItem().toString());
+            }
+        });
+ */
+        Button enter = (Button) findViewById(R.id.enter);
+        enter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent outputIntent = new Intent(getApplicationContext(), ResultActivity.class);
 
+                EditText bedrooms = (EditText) findViewById(R.id.bedrooms);
+                EditText bathrooms = (EditText) findViewById(R.id.bathrooms);
+
+                int bedrooms_i = Integer.parseInt(bedrooms.getText().toString());
+                int bathrooms_i = Integer.parseInt(bathrooms.getText().toString());
+                int result = 2000 * bedrooms_i + 1000 + 500 * (bathrooms_i - 1);
+                outputIntent.putExtra("resultPrice","$" + result);
+
+                startActivity(outputIntent);
+
+            }
+        });
+
+
+    }
 }
