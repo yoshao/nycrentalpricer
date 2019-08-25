@@ -1,97 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/moveInNum"
+    android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/neighborhood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:hint="Neighborhood"
-        android:inputType="textAutoComplete"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="50dp">
 
-    <EditText
-        android:id="@+id/bedrooms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="# bedrooms"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/neighborhood" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <EditText
-        android:id="@+id/bathrooms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="# bathrooms"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bedrooms" />
+            <TextView
+                android:id="@+id/bed_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# bedrooms"
+                android:textSize="18sp" />
 
-    <EditText
-        android:id="@+id/sqfoot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Sq foot (optional)"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bathrooms" />
+            <Spinner
+                android:id="@+id/bed_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/bed_nums" />
+        </TableRow>
 
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:checked="false"
-        android:text="Washer/dryer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            <TextView
+                android:id="@+id/bath_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="# bathrooms"
+                android:textSize="18sp" />
 
-    <Spinner
-        android:id="@+id/movein"
-        android:layout_width="65dp"
-        android:layout_height="27dp"
-        android:background="@android:color/darker_gray"
-        android:entries="@array/month_nums"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.129"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/sqfoot" />
+            <Spinner
+                android:id="@+id/bath_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/bath_nums" />
+        </TableRow>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="104dp"
-        android:text="Move-in Month"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sqfoot" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/hood_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Neighbourhood"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/hood_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/hood_names" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/type_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Unit Type"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/type_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/type_names" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <TextView
+                android:id="@+id/movein_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Move-in Month"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/movein_s"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/month_nums" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <CheckBox
+                android:id="@+id/transit_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near public transit" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <CheckBox
+                android:id="@+id/doorman_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Doorman" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <CheckBox
+                android:id="@+id/gym_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gym" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <CheckBox
+                android:id="@+id/wd_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Washer/dryer" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <CheckBox
+                android:id="@+id/furnished_cb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Furnished" />
+
+        </TableRow>
+
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/enter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Enter"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </TableRow>
+    </TableLayout>
+
+</RelativeLayout>

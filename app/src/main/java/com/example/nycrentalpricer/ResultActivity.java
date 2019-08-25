@@ -14,7 +14,7 @@ public class ResultActivity extends AppCompatActivity {
 
         if (getIntent().hasExtra("resultPrice")){
             TextView tv = (TextView) findViewById(R.id.priceTextView);
-            String text = getIntent().getExtras().getString("resultPrice");
+            String text = getIntent().getExtras().getString("resultString");
             tv.setText(text);
         }
     }

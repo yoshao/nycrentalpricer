@@ -20,11 +20,6 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
     </string-array>
     <string-array name="bath_nums">
         <item>1</item>
@@ -34,17 +29,123 @@
         <item>5</item>
     </string-array>
     <string-array name="hood_names">
-        <item>Chinatown</item>
+        <item>Williamsburg</item>
+        <item>Downtown Brooklyn</item>
+        <item>Chelsea</item>
+        <item>Central Harlem</item>
+        <item>Lower East Side</item>
+        <item>Astoria</item>
+        <item>Tribeca</item>
+        <item>Bushwick</item>
+        <item>Greenpoint</item>
+        <item>Long Island City</item>
+        <item>Bedford-Stuyvesant</item>
+        <item>Stuyvesant Town/PCV</item>
+        <item>West Village</item>
+        <item>Gravesend</item>
+        <item>Upper West Side</item>
         <item>Upper East Side</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
+        <item>Nolita</item>
+        <item>Dyker Heights</item>
+        <item>Clinton Hill</item>
+        <item>Woodhaven</item>
+        <item>Greenwich Village</item>
+        <item>Park Slope</item>
+        <item>East Village</item>
+        <item>Prospect Lefferts Gardens</item>
+        <item>Prospect Heights</item>
+        <item>Flatbush</item>
+        <item>Cobble Hill</item>
+        <item>College Point</item>
+        <item>Midtown</item>
+        <item>Windsor Terrace</item>
+        <item>Boerum Hill</item>
+        <item>Brooklyn Heights</item>
+        <item>Gramercy Park</item>
+        <item>Fort Greene</item>
+        <item>Ridgewood</item>
+        <item>Financial District</item>
+        <item>Pelham Bay</item>
+        <item>Bay Ridge</item>
+        <item>Forest Hills</item>
+        <item>Elmhurst</item>
+        <item>Marine Park</item>
+        <item>Midtown South</item>
+        <item>Riverdale</item>
+        <item>Briarwood</item>
+        <item>Crown Heights</item>
+        <item>Brighton Beach</item>
+        <item>Flushing</item>
+        <item>Manhattan</item>
+        <item>East New York</item>
+        <item>Carroll Gardens</item>
+        <item>Coney Island</item>
+        <item>Sunnyside</item>
+        <item>Gowanus</item>
+        <item>East Harlem</item>
+        <item>Ditmas Park</item>
+        <item>Battery Park City</item>
+        <item>Corona</item>
+        <item>Jackson Heights</item>
+        <item>Parkchester</item>
+        <item>Midwood</item>
+        <item>Flatiron</item>
+        <item>Prospect Park South</item>
+        <item>Rego Park</item>
+        <item>Jamaica</item>
+        <item>Little Italy</item>
+        <item>Bayside</item>
+        <item>Soho</item>
+        <item>Hamilton Heights</item>
+        <item>Morningside Heights</item>
+        <item>Columbia St Waterfront District</item>
+        <item>Central Park South</item>
+        <item>Washington Heights</item>
+        <item>Sheepshead Bay</item>
+        <item>Midtown East</item>
+        <item>Chinatown</item>
+        <item>Woodside</item>
+        <item>Inwood</item>
+        <item>DUMBO</item>
+        <item>Greenwood</item>
+        <item>Jamaica Estates</item>
+        <item>Kensington</item>
+        <item>Sunset Park</item>
+        <item>Middle Village</item>
+        <item>Highbridge</item>
+        <item>Kew Gardens</item>
+        <item>Roosevelt Island</item>
+        <item>Brownsville</item>
+        <item>Bronxwood</item>
+        <item>Borough Park</item>
+        <item>Glendale</item>
+        <item>Red Hook</item>
+        <item>Morris Park</item>
+        <item>Jamaica Hills</item>
+        <item>Bath Beach</item>
+        <item>Kingsbridge</item>
+        <item>Bedford Park</item>
+        <item>Belmont</item>
+        <item>University Heights</item>
+        <item>Staten Island</item>
+        <item>West Harlem</item>
+        <item>Mott Haven</item>
+        <item>Kew Gardens Hills</item>
+        <item>Concourse</item>
+        <item>Maspeth</item>
+        <item>Bensonhurst</item>
+        <item>Bergen Beach</item>
+        <item>Fordham</item>
+    </string-array>
+    <string-array name="type_names">
+        <item>Rental Unit</item>
+        <item>Multi-family</item>
+        <item>Condo</item>
+        <item>Building</item>
+        <item>Co-op</item>
+        <item>Townhouse</item>
+        <item>Condop</item>
+        <item>Apartment</item>
+        <item>Other type</item>
     </string-array>
 </resources>
