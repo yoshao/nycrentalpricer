@@ -13,7 +13,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     //protected String bed, bath, type, hood, month;
 
@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button enter = (Button) findViewById(R.id.enter);
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,13 +38,8 @@ public class MainActivity extends AppCompatActivity {
                 addListenerOnButton();
                 Intent outputIntent = new Intent(getApplicationContext(), ResultActivity.class);
 
-                //EditText bedrooms = (EditText) findViewById(R.id.bedrooms);
-                //EditText bathrooms = (EditText) findViewById(R.id.bathrooms);
-
-                //int bedrooms_i = Integer.parseInt(bedrooms.getText().toString());
-                //int bathrooms_i = Integer.parseInt(bathrooms.getText().toString());
-                //int result = 2000 * bedrooms_i + 1000 + 500 * (bathrooms_i - 1);
                 outputIntent.putExtra("resultString",bed + bath + transit + amenities + hood + type);
+                outputIntent.putExtra("monthString",month);
 
                 startActivity(outputIntent);
 
@@ -54,70 +48,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void addListenerOnButton(){
-        Spinner bed_s = (Spinner) findViewById(R.id.bed_s);
-        bed_s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bed = parent.getSelectedItem().toString();
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        Spinner bath_s = (Spinner) findViewById(R.id.bath_s);
-        bed_s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                bath = parent.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        Spinner hood_s = (Spinner) findViewById(R.id.hood_s);
-        bed_s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                hood = parent.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        Spinner type_s = (Spinner) findViewById(R.id.type_s);
-        bed_s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                type = parent.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        Spinner movein_s = (Spinner) findViewById(R.id.movein_s);
-        bed_s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                month = parent.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         CheckBox doorman_cb = (CheckBox) findViewById(R.id.doorman_cb);
         CheckBox gym_cb = (CheckBox) findViewById(R.id.gym_cb);
@@ -134,6 +65,27 @@ public class MainActivity extends AppCompatActivity {
         int amenities_i = doorman + gym + wd + furnished;
         amenities = "" + amenities_i;
 
+        Spinner bed_s = (Spinner) findViewById(R.id.bed_s);
+        Spinner bath_s = (Spinner) findViewById(R.id.bath_s);
+        Spinner hood_s = (Spinner) findViewById(R.id.hood_s);
+        Spinner type_s = (Spinner) findViewById(R.id.type_s);
+        Spinner movein_s = (Spinner) findViewById(R.id.movein_s);
+
+        bed = bed_s.getSelectedItem().toString();
+        bath = bath_s.getSelectedItem().toString();
+        hood = hood_s.getSelectedItem().toString();
+        type = type_s.getSelectedItem().toString();
+        month = movein_s.getSelectedItem().toString();
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
 
     }
 }

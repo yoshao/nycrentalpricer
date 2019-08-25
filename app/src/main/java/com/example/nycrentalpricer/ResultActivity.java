@@ -12,7 +12,7 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        if (getIntent().hasExtra("resultPrice")){
+        if (getIntent().hasExtra("resultString")){
             TextView tv = (TextView) findViewById(R.id.priceTextView);
             String text = getIntent().getExtras().getString("resultString");
             tv.setText(text);
