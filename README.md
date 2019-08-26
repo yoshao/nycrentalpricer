@@ -18,11 +18,11 @@ The App uses modern Machine Learning techniques to predict rental price in NYC b
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
-- 1.	Time Constraint:
+### Time Constraint:
 - Given we have other commitments in life, we can only convene and kick-off the project during weekends. Since we don’t each other before, we have to quickly align our objectives and start working productively from day 1.
-- 2.	Python, Java, Android App integration:
+### Python, Java, Android App integration:
 - In this project, we used Python for data analytic and machine learning based model development. However, we face difficulties trying to output the analytical results in the Android app we built via Java. After multiple trials and errors, we have decided to output different combination of possible user choice on the rental information and their associate price in a CSV file. Then use java to read the output CSV file and loop up pricing according to user inputs.
-- 3.	Data Scarcity
+### Data Scarcity
 - Nowadays, lots of online real estate website stops sharing the rental details as a measure to protect their own IP. Therefore, we faces difficulties finding the right training data sets online. We eventually landed on some online data set from reliable data source that we can use to train the model.
 
 ## Accomplishments that we're proud of ##
