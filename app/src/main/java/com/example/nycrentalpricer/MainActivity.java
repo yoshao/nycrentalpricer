@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -12,6 +13,33 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import static java.nio.charset.Charset.*;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -31,22 +59,66 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        readData();
+
         Button enter = (Button) findViewById(R.id.enter);
         enter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 addListenerOnButton();
+                String result = bed + bath + transit + amenities + hood + type;
+                String theprice = rentSamples2.get(result).substring(0,4);
+                String medianprice = rentSamples2.get(result).substring(4,8);
                 Intent outputIntent = new Intent(getApplicationContext(), ResultActivity.class);
+                outputIntent.putExtra("com.example.rent2.SOMETHING", theprice);
+                outputIntent.putExtra("com.example.rent2.SOMETHING2", medianprice);
 
-                outputIntent.putExtra("resultString",bed + bath + transit + amenities + hood + type);
-                outputIntent.putExtra("monthString",month);
+
+                //outputIntent.putExtra("resultString",bed + bath + transit + amenities + hood + type);
+                //outputIntent.putExtra("monthString",month);
 
                 startActivity(outputIntent);
+
+
+
 
             }
         });
     }
 
+    private List<DataSample> rentSamples = new ArrayList<>();
+    private HashMap<String, String> rentSamples2 = new HashMap<>();
+
+    private void readData() {
+        InputStream is = getResources().openRawResource(R.raw.data2);
+        BufferedReader reader = new BufferedReader(
+                new InputStreamReader(is, forName("UTF-8"))
+        );
+
+        String line = "";
+        try {
+            //strop over headers
+            reader.readLine();
+
+            while ((line = reader.readLine()) != null) {
+                //split by ','
+                String[] tokens = line.split(",");
+
+                //read the data
+                DataSample sample = new DataSample();
+                sample.setFeatures(tokens[0]);
+                sample.setPrice(tokens[1]);
+                sample.setMedianprice(tokens[2]);
+                rentSamples.add(sample);
+                rentSamples2.put(tokens[0],tokens[1]+tokens[2]);
+
+                Log.d("MyActivity", "Just created" + sample);
+            }
+        } catch (IOException e) {
+            Log.wtf("MyActivity", "Error message" + line,e);
+            e.printStackTrace();
+        }
+    }
     public void addListenerOnButton(){
 
 

@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">rent2</string>
-    <string name="textview">TextView</string>
-    <string name="button">Button</string>
-    <string name="name">Name</string>
-    <string name="result">result</string>
-    <string name="medianprice">medianPrice</string>
-</resources>
