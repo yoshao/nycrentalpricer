@@ -1,5 +1,8 @@
 # New York City Rental Pricer App
 
+
+![](nyc_pricer_demo.gif)
+
 ## Inspiration ##
 
 As a New Yorker myself, looking for a new home is always a daunting experience: the possible over-priced listings and unfamiliarity in the neighborhood making me uncomfortable to negotiate a better price with the landlord. Even after landing a place, one thing always puzzles me is whether I am overpaying my rent. 
@@ -20,7 +23,6 @@ The App uses modern Machine Learning techniques to predict rental price in NYC b
  - Model output csv is read, and result is looked up using result string
  - Result is displayed in a new screen
  
-![](nyc_pricer_demo.gif)
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
