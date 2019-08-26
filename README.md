@@ -19,6 +19,8 @@ The App uses modern Machine Learning techniques to predict rental price in NYC b
  - Processor reads user input to output a result string
  - Model output csv is read, and result is looked up using result string
  - Result is displayed in a new screen
+ 
+![](nyc_pricer_demo.gif)
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
