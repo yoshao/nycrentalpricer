@@ -9,12 +9,12 @@ Thus, we are introducing this App that will help renters in the Big Apple to gai
 The App uses modern Machine Learning techniques to predict rental price in NYC based on Streeteasy data. Users will just need to enter some apartment descriptions such as how many bedrooms or what neighborhood and the App will return the fair rental price for the user.
 
 ## How we built it ##
-###Data Analysis Model
+### Data Analysis Model
  - The Data Analytics Model deploys machine learning models to identify key drivers for the moving rental prices in one of the most expensive place in the world - New York City- location, room size, and room type. Based on model results, rental rates are predicted for various property scenarios. Among many features used, neighborhood is a very important predictors for the rental price. As below demo has shown, different neighborhood can results in drastically different price for 1 bed apartment.
  
 ![](nyc_price2.gif)
 
-###Android App
+### Android App
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
