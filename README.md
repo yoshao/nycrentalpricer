@@ -1,7 +1,7 @@
 # New York City Rental Pricer App
 
 
-![](nyc_pricer_demo.gif)
+![](nyc_pricer_demo2.gif)
 
 ## Inspiration ##
 
