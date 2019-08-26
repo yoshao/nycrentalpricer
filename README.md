@@ -9,20 +9,24 @@ Thus, we are introducing this App that will help renters in the Big Apple to gai
 The App uses modern Machine Learning techniques to predict rental price in NYC based on Streeteasy data. Users will just need to enter some apartment descriptions such as how many bedrooms or what neighborhood and the App will return the fair rental price for the user.
 
 ## How we built it ##
-### Data Analysis Model
+###Data Analysis Model
  - The Data Analytics Model deploys machine learning models to identify key drivers for the moving rental prices in one of the most expensive place in the world - New York City- location, room size, and room type. Based on model results, rental rates are predicted for various property scenarios. Among many features used, neighborhood is a very important predictors for the rental price. As below demo has shown, different neighborhood can results in drastically different price for 1 bed apartment.
  
 ![](nyc_price2.gif)
 
-### Android App
+###Android App
+ - We use spinners (dropdown list) and checkboxes to get user inputs
+ - Processor reads user input to output a result string
+ - Model output csv is read, and result is looked up using result string
+ - Result is displayed in a new screen
 
 ## Challenges we ran into ##
 We have ran into multiple challenges which includes:
-### Time Constraint:
+- 1.	Time Constraint:
 - Given we have other commitments in life, we can only convene and kick-off the project during weekends. Since we don’t each other before, we have to quickly align our objectives and start working productively from day 1.
-### Python, Java, Android App integration:
+- 2.	Python, Java, Android App integration:
 - In this project, we used Python for data analytic and machine learning based model development. However, we face difficulties trying to output the analytical results in the Android app we built via Java. After multiple trials and errors, we have decided to output different combination of possible user choice on the rental information and their associate price in a CSV file. Then use java to read the output CSV file and loop up pricing according to user inputs.
-### Data Scarcity
+- 3.	Data Scarcity
 - Nowadays, lots of online real estate website stops sharing the rental details as a measure to protect their own IP. Therefore, we faces difficulties finding the right training data sets online. We eventually landed on some online data set from reliable data source that we can use to train the model.
 
 ## Accomplishments that we're proud of ##
